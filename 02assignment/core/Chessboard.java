@@ -1,3 +1,4 @@
+package core;
 public class Chessboard {
 
 	public int dim = 0; // array dimension [row][column]

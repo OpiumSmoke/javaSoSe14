@@ -1,3 +1,6 @@
+package solvers;
+import core.Chessboard;
+
 public abstract class BasicQueenSolver {
 /*
  * 

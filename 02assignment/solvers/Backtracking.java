@@ -1,3 +1,6 @@
+package solvers;
+import core.Chessboard;
+
 public class Backtracking extends BasicQueenSolver {
 	public static final int dim = 8;
 	public static int solutions;

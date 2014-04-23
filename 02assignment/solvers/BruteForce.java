@@ -1,3 +1,6 @@
+package solvers;
+import core.Chessboard;
+
 public class BruteForce extends BasicQueenSolver{
 	
 	public static final int dim = 8;
