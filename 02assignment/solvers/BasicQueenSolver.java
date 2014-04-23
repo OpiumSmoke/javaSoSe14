@@ -2,14 +2,16 @@ package solvers;
 import core.Chessboard;
 
 public abstract class BasicQueenSolver {
-/*
- * 
- */
+
 	public BasicQueenSolver(){
 	}
 	
 	public abstract void solve();
 	
+	/*
+	 * checks if every queen hat it's proper place.
+	 * I used some elaborate for loops for that.
+	 */
 	public static boolean checkChessboard(Chessboard board){
 //		check if in there is only one queen in every row, column and diagonal
 //		System.out.println("Checking board...");
@@ -62,7 +64,7 @@ public abstract class BasicQueenSolver {
 		
 		for (int k = 0; k < dim-1; k++){ // now check diagonals l-r.
 			for (int i = 0; i+k < dim; i++){ // upper triangle
-				int ik = i+k;
+//				int ik = i+k;
 				if (board.get(i, i+k) == true){
 					inUpperDiagonal++;
 					if (inUpperDiagonal > 1){
@@ -93,7 +95,7 @@ public abstract class BasicQueenSolver {
 		
 		for (int k = 0; k < dim-1; k++){ // now check diagonals r-l.
 			for (int i = 0; i+k < dim; i++){ // upper triangle
-				int ind = dim-1-(i+k);
+//				int ind = dim-1-(i+k);
 //				System.out.println("In " +  i + " , " + ind);
 				if (board.get(i, dim-1-(i+k)) == true){
 					inUpperDiagonal++;
@@ -111,8 +113,8 @@ public abstract class BasicQueenSolver {
 				if (board.get(i+k, dim-1-i) == true &&  k != 0){ 
 					// lower triangle
 					inLowerDiagonal++;
-					ind = dim-1-i;
-					int ik = i+k;
+//					ind = dim-1-i;
+//					int ik = i+k;
 					if (inLowerDiagonal > 1){
 //						System.out.println("There is more than one queen 
 //									in lower diagonal on " +
