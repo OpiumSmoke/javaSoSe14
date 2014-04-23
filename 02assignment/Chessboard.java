@@ -4,7 +4,10 @@ public class Chessboard{
 	public boolean[][] field = new boolean[10][10]; // n x n matrix for the board
 	public int nQueens = 0; // number of queens on a field
 	
-
+	/* Chessboard is created.
+	 * dimension is set, a field in a size of dim is set up with false
+	 * in each "square".
+	 */
 	public Chessboard(int dimension){
 		this.dim = dimension;
 		this.field = new boolean[dim][dim];
@@ -17,6 +20,9 @@ public class Chessboard{
 		}
 	}
 	
+	/* Wrote createField at first to check some stuff out.
+	 * Basically, the same as a Chessboard constructor.
+	 */
 	public void createField(int dimension){
 		dim = dimension;
 		field = new boolean[dim][dim];
@@ -30,6 +36,10 @@ public class Chessboard{
 		
 	}
 	
+	/* printBoard
+	 * prints a board. Output of each cell depends on it's value.
+	 * I like it better as a toString method. 
+	 */
 	public void printBoard(){
 		// it prints my board... but it's not String toString();
 		
@@ -53,6 +63,10 @@ public class Chessboard{
 	
 	}
 	
+	/* A toString method being asked to be written in a task.
+	 * Same principle as my printBoard, with one difference:
+	 * it sticks a field into a string and can be used like that.
+	 */
 	public String toString(){
 		//yepp, that's a toString() if you like. I don't like it.
 		String string = new String();

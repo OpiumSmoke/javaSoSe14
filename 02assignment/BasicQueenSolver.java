@@ -1,5 +1,7 @@
 public abstract class BasicQueenSolver {
-
+/*
+ * 
+ */
 	public BasicQueenSolver(){
 	}
 	
@@ -20,7 +22,8 @@ public abstract class BasicQueenSolver {
 				if (board.get(i, j) == true){
 					inRow++;
 					if (inRow > 1){
-//						System.out.println("In row "+ i + " there is more than one queen!");
+//						System.out.println("In row "+ i + " there is more 
+//											than one queen!");
 //						System.out.println(inRow);
 						return false;
 					}
@@ -39,13 +42,15 @@ public abstract class BasicQueenSolver {
 				if (board.get(i, j) == true){
 					inColumn++;
 					if (inColumn > 1){
-//						System.out.println("In column "+ j + " there is more than one queen!");
+//						System.out.println("In column "+ j + " there is more
+//											than one queen!");
 //						System.out.println(inColumn);
 						return false;
 					}
 				}
 				
-				if (i == dim-1){ // reset queen number in a column on a new column
+				if (i == dim-1){ 
+					// reset queen number in a column on a new column
 //					System.out.println("Reset column piece counter");
 					inColumn = 0;
 				}
@@ -58,7 +63,8 @@ public abstract class BasicQueenSolver {
 				if (board.get(i, i+k) == true){
 					inUpperDiagonal++;
 					if (inUpperDiagonal > 1){
-//						System.out.println("There is more than one queen in upper diagonal on " +
+//						System.out.println("There is more than one queen in 
+//											upper diagonal on " +
 //								i + " , " + ik);
 //						System.out.println(inUpperDiagonal);
 						return false;
@@ -68,7 +74,8 @@ public abstract class BasicQueenSolver {
 				if (board.get(i+k, i) == true && k != 0){ // lower triangle
 					inLowerDiagonal++;
 					if (inLowerDiagonal > 1){
-//						System.out.println("There is more than one queen in lower diagonal on " +
+//						System.out.println("There is more than one queen in 
+//											lower diagonal on " +
 //								ik + " , " + i);
 //						System.out.println(inLowerDiagonal);
 						return false;
@@ -88,7 +95,8 @@ public abstract class BasicQueenSolver {
 				if (board.get(i, dim-1-(i+k)) == true){
 					inUpperDiagonal++;
 					if (inUpperDiagonal > 1){
-//						System.out.println("There is more than one queen in upper diagonal on " +
+//						System.out.println("There is more than one queen 
+//								in upper diagonal on " +
 //								i + " , " + ind);
 //						System.out.println(inUpperDiagonal);
 						return false;
@@ -97,12 +105,14 @@ public abstract class BasicQueenSolver {
 				
 				
 				
-				if (board.get(i+k, dim-1-i) == true &&  k != 0){ // lower triangle
+				if (board.get(i+k, dim-1-i) == true &&  k != 0){ 
+					// lower triangle
 					inLowerDiagonal++;
 					ind = dim-1-i;
 					int ik = i+k;
 					if (inLowerDiagonal > 1){
-//						System.out.println("There is more than one queen in lower diagonal on " +
+//						System.out.println("There is more than one queen 
+//									in lower diagonal on " +
 //								 + ik + " , " + ind);
 //						System.out.println(inLowerDiagonal);
 						return false;
