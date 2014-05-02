@@ -1,4 +1,5 @@
 package core;
+
 public class Chessboard {
 
 	public int dim = 0; // array dimension [row][column]
@@ -36,7 +37,6 @@ public class Chessboard {
 				field[i][j] = false;
 			}
 		}
-
 	}
 
 	/*
@@ -49,7 +49,6 @@ public class Chessboard {
 		for (int i = 0; i < dim; i++) {
 			for (int j = 0; j < dim; j++) {
 				// System.out.printf("i = %d, j = %d", i,j);
-
 				if (get(i, j) == false) {
 					System.out.printf("[ ]");
 				} else if (get(i, j) == true) {
