@@ -1,34 +1,34 @@
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Collections;
+import java.util.Iterator;
 
-public class SimpleController implements IStaticController {
+public class SimpleController implements IStatisticController {
 	private List<Question> questions;
 	private Iterator<Question> qIterator;
 	private HashMap<Question, String> answered;
 	private int rounds, rightAnswers, wrongAnswers;
 
 	public SimpleController(List<Question> q) {
-		this.initialize(questions);
+		initialize(questions);
 	}
 
 	public SimpleController() {
-		this(new ArrayList<Question>());
+		new ArrayList<Question>();
 	}
 
 	@Override
 	public void initialize(List<Question> questions) {
-		this.questions = questions;
-		this.rightAnswers = 0;
-		this.wrongAnswers = 0;
-		this.rounds = 0;
-		this.answered = new HashMap<Question, String>();
-		List<Question> shuffled = new ArrayList<Question>(questions);
-		Collections.shuffle(shuffled);
-		this.qIterator = shuffled.iterator();
+        this.questions = questions;
+        this.rightAnswers = 0;
+        this.wrongAnswers = 0;
+        this.rounds = 0;
+        this.answered = new HashMap<Question, String>();
+        List<Question> shuffled = new ArrayList<Question>(questions);
+        Collections.shuffle(shuffled);
+        this.qIterator = shuffled.iterator();
 	}
 
 	@Override
@@ -50,10 +50,14 @@ public class SimpleController implements IStaticController {
 		}
 		return null;
 	}
+	
+	public int getRounds() {
+		return this.rounds;
+	}
 
 	@Override
 	public int getNumberOfQuestions() {
-		return this.questions.size();
+		return questions.size();
 	}
 
 	@Override
