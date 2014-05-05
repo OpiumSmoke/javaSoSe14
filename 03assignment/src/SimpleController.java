@@ -12,7 +12,7 @@ public class SimpleController implements IStatisticController {
 	private int rounds, rightAnswers, wrongAnswers;
 
 	public SimpleController(List<Question> q) {
-		initialize(questions);
+		initialize(q);
 	}
 
 	public SimpleController() {
@@ -21,14 +21,14 @@ public class SimpleController implements IStatisticController {
 
 	@Override
 	public void initialize(List<Question> questions) {
-        this.questions = questions;
-        this.rightAnswers = 0;
-        this.wrongAnswers = 0;
-        this.rounds = 0;
-        this.answered = new HashMap<Question, String>();
-        List<Question> shuffled = new ArrayList<Question>(questions);
-        Collections.shuffle(shuffled);
-        this.qIterator = shuffled.iterator();
+		this.questions = questions;
+		this.rightAnswers = 0;
+		this.wrongAnswers = 0;
+		this.rounds = 0;
+		this.answered = new HashMap<Question, String>();
+		List<Question> shuffled = new ArrayList<Question>(questions);
+		Collections.shuffle(shuffled);
+		this.qIterator = shuffled.iterator();
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class SimpleController implements IStatisticController {
 		}
 		return null;
 	}
-	
+
 	public int getRounds() {
 		return this.rounds;
 	}

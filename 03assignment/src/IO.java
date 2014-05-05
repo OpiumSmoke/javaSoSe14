@@ -38,7 +38,7 @@ public class IO {
 				}
 				questions.add(new Question(line[0], Arrays.copyOfRange(line, 1,
 						5), ra));
-//				System.out.println(" bla " + questions.get(0));
+//				System.out.println(questions);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -51,6 +51,7 @@ public class IO {
 				}
 			}
 		}
+//		System.out.println(questions.get(0).getQuestion());
 		return questions;
 	}
 

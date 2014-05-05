@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class TextUI {
 
 	private static final int stdrounds = 10;
@@ -15,8 +18,19 @@ public class TextUI {
 	}
 
 	public TextUI(String filename, String player, int maxrounds) {
-		this(new SimpleController(IO.readQuestions(filename)), player,
-				maxrounds);
+		List<Question> ql = new ArrayList<Question>(IO.readQuestions(filename));
+//		System.out.println(ql);
+		this.controller = new SimpleController(ql);
+		this.player = player;
+		this.maxrounds = maxrounds;
+
+		// this(new SimpleController(IO.readQuestions(filename)), player,
+		// maxrounds);
+
+		// SimpleController sc = new
+		// SimpleController(IO.readQuestions(filename));
+
+		
 	}
 
 	public TextUI() {
