@@ -1,3 +1,4 @@
+package gui;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -42,7 +43,7 @@ public class StartNEW extends JFrame {
 	public JFrame StartNEW() {
 		start.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		start.setPreferredSize(winsize);
-		start.setIconImage(new ImageIcon("bin/icon.png").getImage());
+		start.setIconImage(new ImageIcon("src/icon.png").getImage());
 		start.setSize(winsize);
 		start.setLocationRelativeTo(null);
 		start.setResizable(false);

@@ -1,5 +1,8 @@
+package quiz;
 import java.util.ArrayList;
 import java.util.List;
+
+import model.Question;
 
 public class TextUI {
 
@@ -61,7 +64,7 @@ public class TextUI {
 				if (choice >= 0 && choice <= 3) {
 					break;
 				}
-				System.out.println("Choose an integer from 0 to 3::");
+				System.out.println("Choose an integer from 0 to 3:");
 			}
 		}
 		System.out.println("\n\nCorrect Answers:\t"

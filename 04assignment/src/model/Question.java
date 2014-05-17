@@ -1,3 +1,4 @@
+package model;
 public class Question {
 
 	public String question; // question string

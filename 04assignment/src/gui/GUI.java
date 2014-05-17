@@ -1,3 +1,4 @@
+package gui;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -71,14 +72,13 @@ public class GUI extends JFrame {
 	static JLabel textD = new JLabel("Answer D");
 
 	public GUI() {
-
 	};
 
 	public JFrame Window() {
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setPreferredSize(winsize);
 		window.setResizable(false);
-		window.setIconImage(new ImageIcon("bin/icon.png").getImage());
+		window.setIconImage(new ImageIcon("src/icon.png").getImage());
 		// icon from: http://zh.wikipedia.org/wiki/File:Icon_apps_query.svg
 		window.setSize(winsize);
 		window.setLocationRelativeTo(null);
@@ -231,6 +231,7 @@ public class GUI extends JFrame {
 		container.add(answerD, aD);
 
 		next.setEnabled(false);
+		next.addActionListener(Actions.next);
 		bottom.setLayout(new BoxLayout(bottom, BoxLayout.LINE_AXIS));
 		bottom.setPreferredSize(bottomsize);
 		bottom.add(Box.createRigidArea(new Dimension(50, 0)));
