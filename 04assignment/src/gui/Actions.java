@@ -1,7 +1,6 @@
 package gui;
 
 import quiz.IO;
-import quiz.TextUI;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -19,8 +18,8 @@ import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
+import model.Game;
 import model.Question;
 
 public class Actions {
@@ -65,6 +64,7 @@ public class Actions {
 		public void actionPerformed(ActionEvent e) {
 			clearAll();
 			StartNEW start = new StartNEW();
+			EndGame.end.dispose();
 			start.showWindow();
 		}
 	};
@@ -114,13 +114,13 @@ public class Actions {
 	};
 
 	public static ActionListener choose = new ActionListener() {
+		@SuppressWarnings("unchecked")
 		public void actionPerformed(ActionEvent e) {
 			final JFileChooser fc = new JFileChooser();
 			fc.setCurrentDirectory(new File("src/"));
 			int returnVal = fc.showOpenDialog(fc);
 
 			if (returnVal == JFileChooser.APPROVE_OPTION) {
-				// System.out.println("blabla");
 				File file = fc.getSelectedFile();
 				System.out.println("File:" + file.getPath());
 				StartNEW.path.addItem(file.getPath());
@@ -144,6 +144,9 @@ public class Actions {
 				enable();
 			} else {
 				System.out.println("Game over!");
+				EndGame end = new EndGame();
+				end.End(Game.name + ",", Game.controller.getRightAnswers(),
+						Game.maxrounds);
 			}
 		}
 
