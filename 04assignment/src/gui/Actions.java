@@ -136,6 +136,8 @@ public class Actions {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			reset();
+			Game.round++;
+			GUI.currentround.setText(String.valueOf(Game.round));
 			Game.question = Game.controller.getQuestion();
 			showQuestion(Game.question);
 			enable();

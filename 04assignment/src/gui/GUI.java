@@ -1,4 +1,5 @@
 package gui;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -43,8 +44,10 @@ public class GUI extends JFrame {
 	JPanel spacer = new JPanel();
 	JLabel player = new JLabel("Player:");
 	static JLabel name = new JLabel("Player Name");
-	JLabel score = new JLabel("Score:");
-	JLabel question = new JLabel("Question:");
+	JLabel round = new JLabel("Round: ");
+	static JLabel currentround = new JLabel("1");
+	JLabel score = new JLabel("Score: ");
+	JLabel question = new JLabel("Question :");
 	static JLabel correct = new JLabel("X");
 	static JLabel outof = new JLabel("Y");
 	JLabel dash = new JLabel(" / ");
@@ -113,7 +116,8 @@ public class GUI extends JFrame {
 		GridBagLayout q_layout = new GridBagLayout();
 		q_layout.columnWidths = new int[] { 1, 1, 1, 1 };
 		q_layout.rowHeights = new int[] { 1, 1, 1 };
-		q_layout.columnWeights = new double[] {0.0, 1.0, 1.0, 0.0, Double.MIN_VALUE };
+		q_layout.columnWeights = new double[] { 0.0, 1.0, 1.0, 0.0,
+				Double.MIN_VALUE };
 		q_layout.rowWeights = new double[] { 1.0, 1.0, 1.0, Double.MIN_VALUE };
 
 		/*
@@ -183,13 +187,13 @@ public class GUI extends JFrame {
 		aD.gridx = 2;
 		aD.gridy = 2;
 
-//		answerA.setBackground(red);
+		// answerA.setBackground(red);
 		answerA.setPreferredSize(answersize);
 		answerA.setMaximumSize(answersize);
 		answerA.setBorder(BorderFactory.createRaisedSoftBevelBorder());
 		answerA.add(textA);
 		answerA.setEnabled(false);
-//		answerB.setBackground(green);
+		// answerB.setBackground(green);
 		answerB.setPreferredSize(answersize);
 		answerB.setMaximumSize(answersize);
 		answerB.setBorder(BorderFactory.createRaisedSoftBevelBorder());
@@ -214,7 +218,11 @@ public class GUI extends JFrame {
 		top.add(player);
 		top.add(Box.createRigidArea(new Dimension(10, 0)));
 		top.add(name);
-		top.add(Box.createRigidArea(new Dimension(450, 0)));
+		top.add(Box.createRigidArea(new Dimension(300, 0)));
+		top.add(round);
+		top.add(Box.createRigidArea(new Dimension(10, 0)));
+		top.add(currentround);
+		top.add(Box.createRigidArea(new Dimension(50, 0)));
 		top.add(score);
 		top.add(Box.createRigidArea(new Dimension(10, 0)));
 		top.add(correct);
