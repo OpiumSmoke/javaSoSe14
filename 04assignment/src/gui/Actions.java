@@ -296,6 +296,7 @@ public class Actions {
 	public static void showAnswers(Question question, JLabel selected) {
 		String correct = question.answers[question.rightanswer];
 		if (correct == selected.getText()) {
+			GUI.correct.setText(String.valueOf(Game.controller.getRightAnswers()));
 			if (selected == GUI.textA) {
 				GUI.answerA.setBackground(green);
 			} else if (selected == GUI.textB) {
