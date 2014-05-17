@@ -135,12 +135,16 @@ public class Actions {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			reset();
-			Game.round++;
-			GUI.currentround.setText(String.valueOf(Game.round));
-			Game.question = Game.controller.getQuestion();
-			showQuestion(Game.question);
-			enable();
+			if (Game.maxrounds > Game.round) {
+				reset();
+				Game.round++;
+				GUI.currentround.setText(String.valueOf(Game.round));
+				Game.question = Game.controller.getQuestion();
+				showQuestion(Game.question);
+				enable();
+			} else {
+				System.out.println("Game over!");
+			}
 		}
 
 	};
@@ -298,7 +302,8 @@ public class Actions {
 	public static void showAnswers(Question question, JLabel selected) {
 		String correct = question.answers[question.rightanswer];
 		if (correct == selected.getText()) {
-			GUI.correct.setText(String.valueOf(Game.controller.getRightAnswers()));
+			GUI.correct.setText(String.valueOf(Game.controller
+					.getRightAnswers()));
 			if (selected == GUI.textA) {
 				GUI.answerA.setBackground(green);
 			} else if (selected == GUI.textB) {
@@ -391,6 +396,7 @@ public class Actions {
 		GUI.questiontext.setText(null);
 		GUI.correct.setText("0");
 		GUI.outof.setText("0");
+		GUI.currentround.setText(String.valueOf(Game.round));
 		GUI.name.setText(null);
 		GUI.next.setEnabled(false);
 	}
