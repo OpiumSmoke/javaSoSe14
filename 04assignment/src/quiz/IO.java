@@ -96,4 +96,43 @@ public class IO {
 			}
 		}
 	}
+	
+	public static void saveResult(IStatisticController controller,
+			String playername, String filename) {
+//		String filename = playername + "_" + System.currentTimeMillis();
+		BufferedWriter writer = null;
+
+		try {
+			writer = new BufferedWriter(new OutputStreamWriter(
+					new FileOutputStream(filename)));
+
+			writer.write("Player Name: " + playername);
+			writer.newLine();
+			writer.write("Correct answers:\t" + controller.getRightAnswers());
+			writer.newLine();
+			writer.write("Wrong answers:\t" + controller.getWrongAnswers());
+
+			writer.newLine();
+			writer.newLine();
+
+			Map<Question, String> answers = controller.getAnswers();
+
+			for (Map.Entry<Question, String> entry : answers.entrySet()) {
+				writer.write(entry.getKey().getQuestion() + ", "
+						+ entry.getValue() + ", "
+						+ entry.getKey().checkAnswer(entry.getValue()));
+				writer.newLine();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (writer != null) {
+					writer.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }

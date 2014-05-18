@@ -44,7 +44,7 @@ public class EndGame extends JFrame {
 	}
 
 	public JFrame End(String playername, int correct, int rounds) {
-		end.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		end.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		end.setPreferredSize(winsize);
 		end.setIconImage(new ImageIcon("src/icon.png").getImage());
 		end.setSize(winsize);
@@ -130,7 +130,9 @@ public class EndGame extends JFrame {
 		btns_c.gridx = 0;
 		btns_c.gridy = 3;
 		
+		save.addActionListener(Actions.save);
 		exit.addActionListener(Actions.exit);
+		again.addActionListener(Actions.newquiz);
 		
 		name.setText(playername);
 		right.setText(String.valueOf(correct));

@@ -1,4 +1,4 @@
-import gui.GUI;
+import gui.*;
 
 public class Main {
 
@@ -9,7 +9,6 @@ public class Main {
 
 		GUI gui = new GUI();
 		gui.showWindow();
-
 	}
 
 }

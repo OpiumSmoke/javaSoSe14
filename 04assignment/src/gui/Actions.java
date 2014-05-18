@@ -290,6 +290,32 @@ public class Actions {
 
 	};
 
+	public static ActionListener save = new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			final JFileChooser fc = new JFileChooser();
+			fc.setCurrentDirectory(new File("src/"));
+
+			String path = new String("src/" + Game.name + "_"
+					+ System.currentTimeMillis() + ".txt");
+			fc.setSelectedFile(new File(path));
+//			fc.setCurrentDirectory(new File(path));
+
+			int returnVal = fc.showSaveDialog(fc);
+
+			if (returnVal == JFileChooser.APPROVE_OPTION) {
+				File file = fc.getSelectedFile();
+				System.out.println("Saving: " + file.getName());
+				IO.saveResult(Game.controller, Game.name, path);
+			} else {
+				System.out.println("No file was saved.");
+			}
+
+		}
+
+	};
+
 	public static void showQuestion(Question question) {
 		System.out.println(question.getQuestion());
 		for (int i = 0; i < 4; i++) {

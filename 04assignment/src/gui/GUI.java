@@ -22,9 +22,7 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class GUI extends JFrame {
-	private Color green = new Color(0, 250, 0);
 	private Color green1 = new Color(0, 200, 100);
-	private Color red = new Color(250, 0, 0);
 	// private Color blue = new Color(0, 0, 250);
 	// private Color purple = new Color(100, 0, 100);
 	// private Color white = new Color(255, 255, 255);
@@ -190,22 +188,26 @@ public class GUI extends JFrame {
 		// answerA.setBackground(red);
 		answerA.setPreferredSize(answersize);
 		answerA.setMaximumSize(answersize);
+		answerA.setMinimumSize(answersize);
 		answerA.setBorder(BorderFactory.createRaisedSoftBevelBorder());
 		answerA.add(textA);
 		answerA.setEnabled(false);
 		// answerB.setBackground(green);
 		answerB.setPreferredSize(answersize);
 		answerB.setMaximumSize(answersize);
+		answerB.setMinimumSize(answersize);
 		answerB.setBorder(BorderFactory.createRaisedSoftBevelBorder());
 		answerB.add(textB);
 		answerB.setEnabled(false);
 		answerC.setPreferredSize(answersize);
 		answerC.setMaximumSize(answersize);
+		answerC.setMinimumSize(answersize);
 		answerC.setBorder(BorderFactory.createRaisedSoftBevelBorder());
 		answerC.add(textC);
 		answerC.setEnabled(false);
 		answerD.setPreferredSize(answersize);
 		answerD.setMaximumSize(answersize);
+		answerD.setMinimumSize(answersize);
 		answerD.setBorder(BorderFactory.createRaisedSoftBevelBorder());
 		answerD.add(textD);
 		answerD.setEnabled(false);
